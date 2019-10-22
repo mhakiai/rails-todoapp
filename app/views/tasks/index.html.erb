@@ -1,0 +1,21 @@
+<h1>Tasks</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>description</th>
+    <th>is_done</th>
+  </tr>
+    <% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.description %></td>
+    <td><%= task.is_done %></td>
+    <td><%= link_to "Show", "#" %></td>
+    <td><%= link_to "Edit", edit_task_path(task) %></td>
+    <td><%= link_to "Destroy","#" %></td>
+  </tr>
+    <% end %>
+
+</table>
+
+<p><%= link_to "New Task" , new_task_path %></p>
